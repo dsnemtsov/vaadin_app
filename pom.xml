@@ -3,14 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- Project from https://start.vaadin.com/project/41e7cfba-c2e2-4da1-8b52-b39f6b72ab79 -->
-    <groupId>com.example.application</groupId>
-    <artifactId>flowcrmtutorial</artifactId>
-    <name>Flow CRM Tutorial</name>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>ru.dimas224.vaadin</groupId>
+    <artifactId>ensemble-app</artifactId>
+    <name>ensemble-name</name>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <vaadin.version>23.1.1</vaadin.version>
         <selenium.version>4.1.2</selenium.version>
     </properties>
