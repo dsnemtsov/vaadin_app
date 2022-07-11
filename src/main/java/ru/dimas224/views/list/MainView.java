@@ -49,7 +49,9 @@ public class MainView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
 
         Button addUserBtn = new Button("Добавить", e -> userDialog.open());
-        HorizontalLayout toolbar = new HorizontalLayout(filterText, addUserBtn, userDialog);
+        Button getExercicesBtn = new Button("Упражнения", e -> getUI().ifPresent(ui -> ui.navigate("exercises")));
+
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, addUserBtn, getExercicesBtn, userDialog);
         toolbar.addClassName("toolbar");
 
         return toolbar;
