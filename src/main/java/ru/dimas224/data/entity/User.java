@@ -3,14 +3,14 @@ package ru.dimas224.data.entity;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.dimas224.data.AbstractEntity;
-import ru.dimas224.util.Role;
 
 @Entity(name = "users")
 @Getter
@@ -18,7 +18,11 @@ import ru.dimas224.util.Role;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User extends AbstractEntity {
+public class User {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     @NotBlank
     private String username;
@@ -26,6 +30,25 @@ public class User extends AbstractEntity {
     @NotBlank
     private String email;
 
+    @NotBlank
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    /**
+     *     todo: @MappedSuperclass
+     *     @EntityListeners(AuditingEntityListener.class)
+     *     public abstract class DateAudit implements Serializable {
+     *         @CreatedDate
+     *         @Column(name = "created_at", nullable = false, updatable = false)
+     *         private Date createdAt;
+     *
+     *         @LastModifiedDate
+     *         @Column(name = "updated_at")
+     *         private LocalDateTime updatedAt;
+     *     }
+     */
+
+
 }
