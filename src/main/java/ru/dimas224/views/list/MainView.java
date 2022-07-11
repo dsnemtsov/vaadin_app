@@ -17,8 +17,8 @@ import ru.dimas224.data.entity.User;
 @PageTitle("Users")
 @Route(value = "")
 public class MainView extends VerticalLayout {
-    Grid<User> grid = new Grid<>(User.class, false);
-    TextField filterText = new TextField();
+    private Grid<User> grid = new Grid<>(User.class, false);
+    private TextField filterText = new TextField();
 
     public MainView() {
         addClassName("list-view");
@@ -49,7 +49,9 @@ public class MainView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
 
         Button addUserBtn = new Button("Добавить", e -> userDialog.open());
-        HorizontalLayout toolbar = new HorizontalLayout(filterText, addUserBtn, userDialog);
+        Button getExercicesBtn = new Button("Упражнения", e -> getUI().ifPresent(ui -> ui.navigate("exercises")));
+
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, addUserBtn, getExercicesBtn, userDialog);
         toolbar.addClassName("toolbar");
 
         return toolbar;

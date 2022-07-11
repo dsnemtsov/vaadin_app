@@ -3,6 +3,7 @@ package ru.dimas224.views.list;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import java.util.Set;
 import ru.dimas224.data.entity.Role;
@@ -22,7 +23,9 @@ public class EditUserDialog extends Dialog{
         this.roles.setItems(roles);
         this.roles.setItemLabelGenerator(Enum::toString);
 
-        add(id, username, email, this.roles);
+        VerticalLayout userForm = new VerticalLayout(id, username, email, this.roles);
+
+        add(userForm);
 
         setHeaderTitle("Управление пользователем");
         getFooter().add(cancelBtn);
