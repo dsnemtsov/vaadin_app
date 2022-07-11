@@ -2,6 +2,7 @@ package ru.dimas224.views.list;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -65,6 +66,7 @@ public class ExercisesView extends VerticalLayout implements Constants {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
 
         Button homeBtn = new Button("Домой", e -> getUI().ifPresent(ui -> ui.navigate("")));
+        homeBtn.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
         HorizontalLayout toolbar = new HorizontalLayout(filterText, homeBtn);
         toolbar.addClassName("toolbar");
